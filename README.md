@@ -1,6 +1,6 @@
 # Svelte Fill Width
 
-Use to fill the width of an HTML Element.
+Use to fill the width of an HTML Element. No matter what size the font is, it will always fill the width of the given container.
 
 ## Use
 
