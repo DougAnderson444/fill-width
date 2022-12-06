@@ -1,5 +1,7 @@
 <script>
 	import { fillWidth } from '@douganderson444/fill-width';
+
+	let offsetWidth;
 	let maxWidth = 400;
 	let maxSize = 20;
 	$: width = maxWidth + 'px';
@@ -21,36 +23,41 @@
 	</label>
 </section>
 
-<div style:width>
-	<p style:fontSize={fontSize + 'px'}>
-		<span use:fillWidth={{ width: maxWidth, fontSize }} contenteditable
-			>Contenteditable text goes here</span
-		>
+<div style:width bind:offsetWidth>
+	<p
+		style:fontSize={fontSize + 'px'}
+		use:fillWidth={{ width: maxWidth }}
+		contenteditable
+		on:input={() => {
+			maxWidth = offsetWidth;
+		}}
+	>
+		Contenteditable para in a div goes here
 	</p>
 </div>
 
 <div style:width>
 	<p style:fontSize={fontSize + 'px'}>
-		<span use:fillWidth={{ width: maxWidth, fontSize }}
-			>A Really Very Extraordinarily Long And Tall Woman
-		</span>
+		<span use:fillWidth={{ width: maxWidth }} contenteditable>Span in Para</span>
 	</p>
+</div>
+
+<div style:width>
+	<div style:fontSize={fontSize + 'px'} use:fillWidth={{ width: maxWidth }}>
+		Even works with different fonts
+	</div>
 </div>
 
 <style>
 	div {
-		overflow: hidden;
-		margin-bottom: 9px;
 		border: 1px solid yellowgreen;
+		margin-bottom: 9px;
 	}
 
-	:global(p, span) {
+	p,
+	span {
 		margin: 0px;
 		font-family: 'Luckiest Guy', cursive;
-	}
-
-	:global(span) {
-		white-space: nowrap;
 	}
 
 	@font-face {
