@@ -11,7 +11,7 @@
 	export let width;
 	// export let height;
 	// export let ready = false;
-	export let fontSize;
+	export let fontSize = 10;
 
 	export const getWidth = () => width;
 
