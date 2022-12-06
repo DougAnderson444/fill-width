@@ -16,10 +16,11 @@ export function fillWidth(nodeEl, { width = 227, fontSize = 20 } = {}) {
 
 	nodeEl.style.fontSize = (width / fitTest.getWidth()) * fontSize + 'px';
 
-	fitTest.$on('width', (e) => {
-		nodeEl.style.fontSize = (width / e.detail) * fontSize + 'px';
-	});
-	fitTest.$set({ ready: true });
+	// Alternate method using events
+	// fitTest.$on('width', (e) => {
+	// 	nodeEl.style.fontSize = (width / e.detail) * fontSize + 'px';
+	// });
+	// fitTest.$set({ ready: true });
 
 	return {
 		update(params) {
@@ -28,8 +29,7 @@ export function fillWidth(nodeEl, { width = 227, fontSize = 20 } = {}) {
 
 			fitTest.$set({
 				text: nodeEl.innerHTML,
-				fontSize,
-				ready: false
+				fontSize
 			});
 
 			nodeEl.style.fontSize = (width / fitTest.getWidth()) * fontSize + 'px';
