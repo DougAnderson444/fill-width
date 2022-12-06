@@ -1,6 +1,7 @@
 <script>
 	import { fillWidth } from '@douganderson444/fill-width';
 
+	let adjustableWidthEl;
 	let offsetWidth;
 	let maxWidth = 400;
 	let maxSize = 20;
@@ -25,10 +26,14 @@
 
 <div style:width bind:offsetWidth>
 	<p
+		bind:this={adjustableWidthEl}
 		style:fontSize={fontSize + 'px'}
 		use:fillWidth={{ width: maxWidth }}
 		contenteditable
-		on:input={() => {
+		on:change={() => {
+			maxWidth = offsetWidth;
+		}}
+		on:keypress={() => {
 			maxWidth = offsetWidth;
 		}}
 	>
