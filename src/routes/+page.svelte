@@ -7,19 +7,19 @@
 	$: if (fontSize) maxWidth = maxWidth;
 </script>
 
-<div style="width:100%;">
+<section style="width:100%;">
 	<label style="width:100%;">
 		<span style="width:100%;">Width = {maxWidth}</span>
 		<input type="range" bind:value={maxWidth} min="100" max="800" style="width:100%;" />
 	</label>
-</div>
+</section>
 
-<div style="width:100%;">
+<section style="width:100%;">
 	<label style="width:100%;">
 		<span style="width:100%;">Max Font Size = {fontSize}</span>
 		<input type="range" bind:value={fontSize} min="1" max="100" style="width:100%;" />
 	</label>
-</div>
+</section>
 
 <div style:width>
 	<p style:fontSize={fontSize + 'px'}>
@@ -41,7 +41,7 @@
 	div {
 		overflow: hidden;
 		margin-bottom: 9px;
-		background-color: yellowgreen;
+		border: 1px solid yellowgreen;
 	}
 
 	:global(p, span) {

@@ -22,6 +22,6 @@
 	$: if (ready && height) dispatch('height', height);
 </script>
 
-<p style="font-size: {fontSize}px">
+<p style="font-size: {fontSize}px; opacity: 0; position: absolute; display:hidden;">
 	<span bind:offsetWidth={width} bind:offsetHeight={height} style:opacity={0.4}>{text}</span>
 </p>
