@@ -10,8 +10,10 @@ Use as a:
 2. Svelte Directive
 3. Svelte Component
 
-```bash
-<div>A big container
-    <div use:fillWidth={{ width: number, fontSize: number }}>Some short text</div>
+```js
+// pass the width you want to fit, js takes care of the rest
+<div>
+	A big container
+	<div use:fillWidth={{ width: number }}>Some short text</div>
 </div>
 ```
