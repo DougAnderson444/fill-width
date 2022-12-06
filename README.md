@@ -12,6 +12,6 @@ Use as a:
 
 ```bash
 <div>A big container
-    <div use:fillWidth={{}}>Some short text</div>
+    <div use:fillWidth={{ width: number, fontSize: number }}>Some short text</div>
 </div>
 ```
